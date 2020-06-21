@@ -1,0 +1,15 @@
+.bg-light {
+    background-color: #fff !important;
+}
+
+.img_logo {
+    height: 40px;
+}
+
+.navbar-light .navbar-brand {
+    color: #611F69;
+}
+
+.nav-link {
+    color: #611F69 !important;
+}
