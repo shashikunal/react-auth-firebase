@@ -2,3 +2,16 @@
     background-color: #141019;
     background: radial-gradient(at 50% -20%, #c91de4, #0d060e) fixed;
 } */
+.pagenotFound {
+    display: flex;
+    height: 100vh;
+    color: red;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagenotFound h1 {
+    font-size: 13em;
+    text-shadow: 4px 3px 2px #111;
+}

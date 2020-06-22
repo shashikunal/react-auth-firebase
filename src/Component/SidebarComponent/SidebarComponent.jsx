@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import UserPanel from "../Auth/UserPanel";
+
 class SidebarComponent extends Component {
   constructor(props) {
     super(props);
@@ -7,7 +9,8 @@ class SidebarComponent extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Sidebar</h1>
+        <UserPanel user={this.props.user} />
+        <h1>hello</h1>
       </Fragment>
     );
   }

@@ -41,7 +41,9 @@ class App extends Component {
           <header>
             <HeaderComponent user={this.state.userData} />
           </header>
-          {this.state.userData ? <SidebarComponent /> : ""}
+          {this.state.userData ? (
+            <SidebarComponent user={this.state.userData} />
+          ) : null}
           <ToastContainer />
           <main className="container">
             <Switch>
@@ -49,7 +51,7 @@ class App extends Component {
               <Route path="/login" exact component={LoginComponent} />
               <Route path="/register" exact component={RegisterComponent} />
               <Route path="/password-reset" exact component={PasswordReset} />
-              {/* <Route path="**" component={PageNotFoundComponent} /> */}
+              <Route path="**" component={PageNotFoundComponent} />
             </Switch>
           </main>
         </Router>

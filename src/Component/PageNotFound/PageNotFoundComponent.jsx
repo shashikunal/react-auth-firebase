@@ -2,9 +2,14 @@ import React, { Fragment } from "react";
 import "./PageNotFoundComponent.styles.css";
 const PageNotFoundComponent = () => {
   return (
-    <div>
+    <div className="pagenotFound">
       <Fragment>
-        <h1>404</h1>
+        <div>
+          <p className="font-weight-bold text-uppercase text-center">
+            OOPS Page not found
+          </p>
+          <h1>404</h1>
+        </div>
       </Fragment>
     </div>
   );

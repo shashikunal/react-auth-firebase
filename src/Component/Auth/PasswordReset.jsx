@@ -32,7 +32,7 @@ class PasswordReset extends Component {
       <Fragment>
         <section className="d-flex flex-column vh-100 align-items-center justify-content-center">
           <h2 className="display-5 font-weight-bold text-uppercase border-bottom pb-2">
-            Login
+            Password Reset
           </h2>
           <div className="col-md-4 mx-auto card my-4">
             <div className="card-body">
