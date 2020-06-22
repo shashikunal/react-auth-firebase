@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import firebase from "../../firebase";
 import { toast } from "react-toastify";
 
-class UserPanel extends Component {
+class UpdateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -75,7 +75,7 @@ class UserPanel extends Component {
   };
 
   render() {
-    console.log(this.state.userRef);
+    console.log(this.state.user.uid);
     let progressBar = (
       <progress
         value={this.state.progress}
@@ -130,4 +130,4 @@ class UserPanel extends Component {
   }
 }
 
-export default withRouter(UserPanel);
+export default withRouter(UpdateProfile);

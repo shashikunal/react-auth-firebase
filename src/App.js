@@ -15,6 +15,7 @@ import PageNotFoundComponent from "./Component/PageNotFound/PageNotFoundComponen
 import HomeComponent from "./Component/HomeComponent/HomeComponent";
 import SidebarComponent from "./Component/SidebarComponent/SidebarComponent";
 import PasswordReset from "./Component/Auth/PasswordReset";
+import UpdateProfile from "./Component/Auth/updateProfile";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +52,12 @@ class App extends Component {
               <Route path="/login" exact component={LoginComponent} />
               <Route path="/register" exact component={RegisterComponent} />
               <Route path="/password-reset" exact component={PasswordReset} />
+              {this.state.userData ? (
+                <Route
+                  path="/update-profile"
+                  component={() => <UpdateProfile user={this.state.userData} />}
+                />
+              ) : null}
               <Route path="**" component={PageNotFoundComponent} />
             </Switch>
           </main>

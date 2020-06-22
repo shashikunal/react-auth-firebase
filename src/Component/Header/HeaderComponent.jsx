@@ -21,7 +21,7 @@ class HeaderComponent extends PureComponent {
   }
 
   render() {
-    let { displayName, photoURL } = this.props.user;
+    let { displayName, photoURL, email } = this.props.user;
 
     let AnonymousUser = () => {
       return (
@@ -42,9 +42,27 @@ class HeaderComponent extends PureComponent {
     let AuthUser = () => {
       return (
         <Fragment>
-          <li className="nav-item">
-            <a className="nav-link">{displayName}</a>
-          </li>
+          <div className="dropdown">
+            <button
+              className="btn btn-light dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              {displayName}
+            </button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a className="dropdown-item" href="#">
+                {email}
+              </a>
+              <Link className="dropdown-item" to="/update-profile">
+                update Profile
+              </Link>
+            </div>
+          </div>
+
           <li className="nav-item">
             <a className="nav-link">
               <img

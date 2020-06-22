@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import UserPanel from "../Auth/UserPanel";
+import UpdateProfile from "../Auth/updateProfile";
 
 class SidebarComponent extends Component {
   constructor(props) {
@@ -9,8 +9,7 @@ class SidebarComponent extends Component {
   render() {
     return (
       <Fragment>
-        <UserPanel user={this.props.user} />
-        <h1>hello</h1>
+        <h1>Sidebar</h1>
       </Fragment>
     );
   }

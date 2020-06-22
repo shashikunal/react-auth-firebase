@@ -13,3 +13,27 @@
 .nav-link {
     color: #611F69 !important;
 }
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #611F69 !important;
+}
+
+#dropdownMenuButton {
+    color: #611F69 !important;
+    background: transparent;
+    border: 1px solid #611F69 !important;
+    margin: 2px 9px;
+
+}
