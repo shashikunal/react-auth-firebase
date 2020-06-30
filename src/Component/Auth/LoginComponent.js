@@ -29,15 +29,14 @@ class LoginComponent extends Component {
         .signInWithEmailAndPassword(email, password);
       if (userData.user.emailVerified) {
         const message = `${email} has been successfully logged in 😀`;
-
         toast.success(message);
+        this.setState({ loading: true });
         this.props.history.push("/");
       } else {
         const errMessage = `${email} is not yet verified Please verify first then login`;
-
         toast.error(errMessage);
       }
-      this.setState(() => ({ username: " ", password: "" }));
+      this.setState(() => ({ username: " ", password: "", loading: false }));
     } catch (err) {
       toast.error(err.message);
     }
@@ -79,7 +78,7 @@ class LoginComponent extends Component {
 
                 <div className="form-group mt-4">
                   <button className="btn btn-dark text-uppercase btn-block">
-                    {loading === true ? "loading" : "login"}
+                    {loading ? "loading..." : "login"}
                   </button>
                 </div>
                 <div className="form-group">

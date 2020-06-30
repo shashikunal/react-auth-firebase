@@ -57,14 +57,15 @@ class HeaderComponent extends PureComponent {
               <a className="dropdown-item" href="#">
                 {email}
               </a>
-              <Link className="dropdown-item" to="/update-profile">
-                update Profile
-              </Link>
             </div>
           </div>
 
           <li className="nav-item">
-            <a className="nav-link">
+            <Link
+              className="nav-link"
+              to="/update-photo"
+              title="update profile image"
+            >
               <img
                 src={photoURL}
                 alt={displayName}
@@ -74,7 +75,7 @@ class HeaderComponent extends PureComponent {
                   borderRadius: "100%",
                 }}
               />
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" onClick={this.logout}>

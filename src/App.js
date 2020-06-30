@@ -15,7 +15,12 @@ import PageNotFoundComponent from "./Component/PageNotFound/PageNotFoundComponen
 import HomeComponent from "./Component/HomeComponent/HomeComponent";
 import SidebarComponent from "./Component/SidebarComponent/SidebarComponent";
 import PasswordReset from "./Component/Auth/PasswordReset";
-import UpdateProfile from "./Component/Auth/updateProfile";
+import UpdatePhoto from "./Component/Auth/updatePhoto";
+import AddCourse from "./Component/courses/AddCourse";
+import GetCourses from "./Component/courses/GetCourses";
+import AddVideoForm from "./Component/AddVideoForm";
+import GetVideos from "./Component/GetVideos";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -53,11 +58,33 @@ class App extends Component {
               <Route path="/register" exact component={RegisterComponent} />
               <Route path="/password-reset" exact component={PasswordReset} />
               {this.state.userData ? (
-                <Route
-                  path="/update-profile"
-                  component={() => <UpdateProfile user={this.state.userData} />}
-                />
+                <Fragment>
+                  <Route
+                    path="/update-photo"
+                    component={() => <UpdatePhoto user={this.state.userData} />}
+                  />
+
+                  <Route
+                    path="/add-course"
+                    component={() => <AddCourse user={this.state.userData} />}
+                  />
+                  <Route
+                    path="/get-course"
+                    component={() => <GetCourses user={this.state.userData} />}
+                  />
+                  <Route
+                    path="/add-video"
+                    component={() => (
+                      <AddVideoForm user={this.state.userData} />
+                    )}
+                  />
+                  <Route
+                    path="/videos"
+                    component={() => <GetVideos user={this.state.userData} />}
+                  />
+                </Fragment>
               ) : null}
+
               <Route path="**" component={PageNotFoundComponent} />
             </Switch>
           </main>

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import firebase from "../../firebase";
 import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import md5 from "md5";
 

@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import firebase from "../../firebase";
 import { toast } from "react-toastify";
 
-class UpdateProfile extends Component {
+class UpdatePhoto extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,7 +70,10 @@ class UpdateProfile extends Component {
     this.state.usersRef
       .child(this.state.user.uid)
       .update({ avatar: this.state.url })
-      .then(() => console.log("updated"))
+      .then(() => {
+        this.props.history.push("/");
+        console.log("updated");
+      })
       .catch((err) => console.log(err));
   };
 
@@ -117,11 +120,6 @@ class UpdateProfile extends Component {
                   </button>
                 </div>
               </form>
-              <img
-                style={{ width: "100%" }}
-                src={this.state.url || "https://via.placeholder.com/150"}
-                alt={this.state.user}
-              />
             </div>
           </div>
         </section>
@@ -130,4 +128,4 @@ class UpdateProfile extends Component {
   }
 }
 
-export default withRouter(UpdateProfile);
+export default withRouter(UpdatePhoto);

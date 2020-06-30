@@ -1,0 +1,16 @@
+.card-parent {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.card-parent .card {
+    flex: 1;
+    margin: 10px;
+}
+
+.course_title {
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 15px 106px 5px !important;
+}
